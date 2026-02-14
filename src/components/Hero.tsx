@@ -7,10 +7,6 @@ const Hero = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-6 z-10">
@@ -57,14 +53,6 @@ const Hero = () => {
             >
               View My Work
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-border hover:border-muted-foreground"
-              onClick={scrollToContact}
-            >
-              Get In Touch
-            </Button>
           </motion.div>
 
           <motion.div
@@ -74,9 +62,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             {[
-              { href: "https://github.com/Ashrith2727", icon: Github, label: "GitHub" },
+              { href: "https://github.com/brahmanyasudulagunta", icon: Github, label: "GitHub" },
               { href: "https://linkedin.com/in/brahmanyasudulagunta", icon: Linkedin, label: "LinkedIn" },
-              { href: "mailto:bsudulag@ttu.edu", icon: Mail, label: "Email" },
+              { href: "mailto:bsudulagunta@gmail.com", icon: Mail, label: "Email" },
             ].map((social) => (
               <a
                 key={social.label}
@@ -90,6 +78,15 @@ const Hero = () => {
               </a>
             ))}
           </motion.div>
+
+          <motion.p
+            className="mt-8 text-sm text-muted-foreground/80 max-w-md mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            Seeking new grad & entry-level full-time roles in SRE, DevOps, Infrastructure, and Platform Engineering.
+          </motion.p>
         </div>
       </div>
 

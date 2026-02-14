@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Home, 
-  User, 
-  GraduationCap, 
-  Briefcase, 
-  FolderKanban, 
-  Wrench, 
-  Mail, 
-  Menu, 
+import {
+  Home,
+  User,
+  GraduationCap,
+  Briefcase,
+  FolderKanban,
+  Wrench,
+  Mail,
+  Menu,
   X,
   ChevronRight
 } from "lucide-react";
@@ -27,7 +27,6 @@ const navItems: NavItem[] = [
   { id: "experience", label: "Experience", icon: Briefcase },
   { id: "projects", label: "Projects", icon: FolderKanban },
   { id: "skills", label: "Skills", icon: Wrench },
-  { id: "contact", label: "Contact", icon: Mail },
 ];
 
 const PortfolioSidebar = () => {
@@ -65,7 +64,7 @@ const PortfolioSidebar = () => {
     }
   };
 
-  const sidebarWidth = isHovered ? "w-48" : "w-16";
+  const sidebarWidth = "w-48";
 
   return (
     <>
@@ -118,8 +117,8 @@ const PortfolioSidebar = () => {
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className={cn(
                   "relative flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 group",
-                  isActive 
-                    ? "bg-primary/20 text-primary" 
+                  isActive
+                    ? "bg-primary/20 text-primary"
                     : "hover:bg-secondary text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -131,11 +130,11 @@ const PortfolioSidebar = () => {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-                
+
                 {/* 3D Icon Effect */}
                 <motion.div
-                  whileHover={{ 
-                    scale: 1.2, 
+                  whileHover={{
+                    scale: 1.2,
                     rotateY: 15,
                     rotateX: -10,
                   }}
@@ -148,20 +147,10 @@ const PortfolioSidebar = () => {
                   )} />
                 </motion.div>
 
-                {/* Label with expand animation */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <motion.span
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.2 }}
-                      className="text-sm font-medium whitespace-nowrap"
-                    >
-                      {item.label}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
+                {/* Label */}
+                <span className="text-sm font-medium whitespace-nowrap">
+                  {item.label}
+                </span>
 
                 {/* Hover glow effect */}
                 <motion.div
@@ -205,8 +194,8 @@ const PortfolioSidebar = () => {
                     transition={{ delay: index * 0.05 }}
                     className={cn(
                       "flex items-center gap-3 px-4 py-3 rounded-xl transition-all",
-                      isActive 
-                        ? "bg-primary/20 text-primary" 
+                      isActive
+                        ? "bg-primary/20 text-primary"
                         : "hover:bg-secondary text-muted-foreground"
                     )}
                   >
